@@ -1,0 +1,78 @@
+{
+  "x-generator": "NSwag v14.2.0.0 (NJsonSchema v11.1.0.0 (Newtonsoft.Json v13.0.0.0))",
+  "swagger": "2.0",
+  "info": {
+    "title": "OnikaPlus API",
+    "description": "REST API for web server",
+    "version": "v1"
+  },
+  "consumes": [
+    "application/json",
+    "text/json",
+    "application/*+json"
+  ],
+  "paths": {
+    "/api/TechnicalInspectionRecords/CreateNewInspectionRequest": {
+      "post": {
+        "tags": [
+          "TechnicalInspectionRecords"
+        ],
+        "operationId": "TechnicalInspectionRecords_CreateNewInspectionRequest",
+        "parameters": [
+          {
+            "name": "command",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/CreateNewInspectionRequestCommand"
+            },
+            "x-nullable": false
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "CreateNewInspectionRequestCommand": {
+      "type": "object",
+      "required": [
+        "vehicleOwnerName",
+        "phoneNumber",
+        "vehicleModel",
+        "stateRegistrationNumber",
+        "vehicleVinNumber",
+        "inspectionTime",
+        "additionalInfo"
+      ],
+      "properties": {
+        "vehicleOwnerName": {
+          "type": "string"
+        },
+        "phoneNumber": {
+          "type": "string"
+        },
+        "vehicleModel": {
+          "type": "string"
+        },
+        "stateRegistrationNumber": {
+          "type": "string"
+        },
+        "vehicleVinNumber": {
+          "type": "string"
+        },
+        "inspectionTime": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "additionalInfo": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}
